@@ -4,62 +4,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gizlilik Politikası - OnScreen Note</title>
+    <title>Gizlilik Politikası - OSNote</title>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700&family=Atkinson+Hyperlegible:wght@400;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@500;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=5">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header class="scrolled">
+    <!-- Ambient Background -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <header class="glass">
         <div class="container">
-            <a href="index.html" class="logo"><span class="logo-dot"></span>OnScreen Note</a>
+            <a href="index.html" class="logo">OSNote</a>
             <nav>
                 <ul>
                     <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="hesap-silme.html">Hesap Silme</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <div class="container" style="padding-top: 120px; padding-bottom: 60px; min-height: 80vh; max-width: 820px;">
-        <div class="visual-card" style="padding: 40px;">
+    <div class="container" style="padding-top: 120px; padding-bottom: 60px; min-height: 80vh;">
+        <div class="glass" style="padding: 40px; border-radius: 20px;">
             <h1 style="font-family: var(--font-heading); margin-bottom: 20px;">Gizlilik Politikası</h1>
-            <p style="color: var(--muted); margin-bottom: 30px;">Son güncellenme: 04.09.2024</p>
+            <p style="color: var(--text-muted); margin-bottom: 30px;">Son güncellenme: 10.07.2026 · Uygulama: OSNote: Draw on Screen (eski adıyla OnScreen Note)</p>
 
-            <h3 style="color: var(--amber-deep); margin-bottom: 10px;">Giriş</h3>
-            <p style="margin-bottom: 20px;">OnScreen Note ("biz", "bizim" veya "bize") gizliliğinize saygı duyar. Bu
-                Gizlilik Politikası, mobil
-                uygulamamızı kullanırken bilgilerinizin nasıl toplandığını, kullanıldığını ve paylaşıldığını açıklar.
-            </p>
+            <h3 style="color: var(--color-secondary); margin-bottom: 10px;">Giriş</h3>
+            <p style="margin-bottom: 20px;">OSNote ("biz") gizliliğinize saygı duyar. Bu politika, uygulamayı
+                kullanırken hangi bilgilerin toplandığını, ne için kullanıldığını ve kimlerle paylaşıldığını açıklar.</p>
 
-            <h3 style="color: var(--amber-deep); margin-bottom: 10px;">Toplanan Bilgiler</h3>
-            <p style="margin-bottom: 20px;">Uygulamamız kişisel olarak tanımlanabilir herhangi bir bilgi (isim, adres,
-                telefon numarası vb.) toplamaz.
-                Notlarınız sadece cihazınızda yerel olarak saklanır ve sunucularımıza gönderilmez.</p>
+            <h3 style="color: var(--color-secondary); margin-bottom: 10px;">Topladığımız Bilgiler</h3>
+            <p style="margin-bottom: 12px;"><strong>Notlarınız:</strong> Çizimleriniz ve notlarınız yalnızca
+                cihazınızda saklanır; sunucularımıza gönderilmez, tarafımızca görülemez.</p>
+            <p style="margin-bottom: 12px;"><strong>Hesap bilgileri (isteğe bağlı):</strong> Google ile giriş
+                yaparsanız e-posta adresiniz, adınız ve bir kullanıcı kimliği, kimlik doğrulama için Google Firebase
+                aracılığıyla işlenir. Giriş yapmadan da uygulamayı kullanabilirsiniz.</p>
+            <p style="margin-bottom: 12px;"><strong>Satın alma bilgileri:</strong> Pro satın aldıysanız, satın alma
+                durumunuz ve işlem geçmişiniz, aboneliğinizin doğrulanması ve Pro'nun tüm cihazlarınızda geçerli olması
+                için hizmet sağlayıcımız RevenueCat aracılığıyla hesabınıza bağlanır.</p>
+            <p style="margin-bottom: 20px;"><strong>Reklam verileri:</strong> Ücretsiz sürümde Google AdMob, reklam
+                gösterimi için cihazınızın reklam kimliği gibi verileri kullanabilir. Avrupa'daki kullanıcılara onay
+                formu gösterilir; tercihlerinizi uygulama içinden Ayarlar → Reklam Tercihleri ile değiştirebilirsiniz.</p>
 
-            <h3 style="color: var(--amber-deep); margin-bottom: 10px;">İzinler</h3>
-            <p style="margin-bottom: 20px;">Uygulamamızın çalışması için gerekli olan bazı izinler (örneğin "Diğer
-                uygulamaların üzerinde gösterim")
-                sadece uygulamanın temel fonksiyonlarını yerine getirmek amacıyla kullanılır.</p>
+            <h3 style="color: var(--color-secondary); margin-bottom: 10px;">Kullanım Amaçları</h3>
+            <p style="margin-bottom: 20px;">Bu bilgileri yalnızca şunlar için kullanırız: hesabınızı yönetmek,
+                satın alımlarınızı doğrulamak ve cihazlar arasında taşımak, reklam göstermek ve destek taleplerinize
+                yanıt vermek. Verileriniz üçüncü taraflara satılmaz.</p>
 
-            <h3 style="color: var(--amber-deep); margin-bottom: 10px;">Reklamlar</h3>
-            <p style="margin-bottom: 20px;">Uygulamamızda Google AdMob gibi üçüncü taraf reklam hizmetlerini
-                kullanabiliriz. Bu hizmetler, size ilgi
-                alanlarınıza uygun reklamlar göstermek için cihazınızla ilgili anonim verileri (reklam kimliği gibi)
-                kullanabilir.</p>
+            <h3 style="color: var(--color-secondary); margin-bottom: 10px;">Paylaşım</h3>
+            <p style="margin-bottom: 20px;">Veriler yalnızca, bizim adımıza hizmet veren sağlayıcılarla paylaşılır:
+                Google Firebase (kimlik doğrulama), RevenueCat (satın alma yönetimi) ve Google AdMob (reklam).
+                Tüm aktarımlar şifrelenir (TLS).</p>
 
-            <h3 style="color: var(--amber-deep); margin-bottom: 10px;">İletişim</h3>
-            <p>Gizlilik politikamızla ilgili sorularınız varsa, lütfen bizimle iletişime geçin.</p>
+            <h3 style="color: var(--color-secondary); margin-bottom: 10px;">Saklama ve Silme</h3>
+            <p style="margin-bottom: 20px;">Hesap bilgileriniz, hesabınız silinene kadar saklanır. Hesabınızı ve
+                ilişkili verilerinizi istediğiniz zaman sildirebilirsiniz — ayrıntılar için
+                <a href="hesap-silme.html" style="color: var(--color-secondary);">Hesap ve Verilerin Silinmesi</a>
+                sayfasına bakın.</p>
+
+            <h3 style="color: var(--color-secondary); margin-bottom: 10px;">İzinler</h3>
+            <p style="margin-bottom: 20px;">Uygulamanın çalışması için gereken izinler (örneğin "Diğer uygulamaların
+                üzerinde göster") yalnızca temel işlevler için kullanılır. Ekranınızdaki içerik okunmaz veya
+                kaydedilmez; ekran görüntüsü özelliği yalnızca siz istediğinizde ve yalnızca cihazınıza kaydeder.</p>
+
+            <h3 style="color: var(--color-secondary); margin-bottom: 10px;">Değişiklikler</h3>
+            <p style="margin-bottom: 20px;">Bu politikada yapılacak değişiklikler bu sayfada yayımlanır.</p>
+
+            <h3 style="color: var(--color-secondary); margin-bottom: 10px;">İletişim</h3>
+            <p style="margin-bottom: 30px;">Sorularınız için: <a href="mailto:destek217product@gmail.com"
+                    style="color: var(--color-secondary);">destek217product@gmail.com</a></p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin-bottom: 30px;">
+
+            <h2 style="font-family: var(--font-heading); margin-bottom: 20px;">Privacy Policy (English Summary)</h2>
+            <p style="margin-bottom: 12px;">Your notes stay on your device only; we cannot see them. If you sign in
+                with Google (optional), your email address, name and a user ID are processed via Google Firebase for
+                authentication. If you purchase Pro, your purchase status and transaction history are linked to your
+                account via our service provider RevenueCat so Pro works on all your devices. The free version shows
+                ads via Google AdMob, which may use your device's advertising ID (consent is collected where required).</p>
+            <p style="margin-bottom: 12px;">We use this data only for account management, purchase verification, ads
+                and support. Data is never sold. It is shared only with service providers acting on our behalf
+                (Google Firebase, RevenueCat, Google AdMob) and is encrypted in transit.</p>
+            <p>You can request deletion of your account and associated data at any time — see the
+                <a href="hesap-silme.html" style="color: var(--color-secondary);">account deletion page</a>.
+                Contact: <a href="mailto:destek217product@gmail.com"
+                    style="color: var(--color-secondary);">destek217product@gmail.com</a></p>
         </div>
     </div>
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 OnScreen Note. Tüm hakları saklıdır.</p>
+            <p>&copy; 2026 OSNote. Tüm hakları saklıdır.</p>
         </div>
     </footer>
 </body>
