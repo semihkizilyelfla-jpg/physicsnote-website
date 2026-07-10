@@ -4,25 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OnScreen Note - Ekranınızı Deftere Çevirin</title>
+    <title>OnScreen Note - Ekranını Deftere Çevir</title>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800&family=Patrick+Hand&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Atkinson+Hyperlegible:wght@400;700&family=Patrick+Hand&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=5">
     <!-- Meta Tags -->
     <meta name="description"
         content="OnScreen Note ile ekranın üzerine özgürce çizim yapın. Basınç hassasiyeti ve palm rejection ile profesyonel not alma deneyimi.">
-    <meta name="theme-color" content="#050511">
+    <meta name="theme-color" content="#fafaf9">
 </head>
 
 <body>
 
     <header>
         <div class="container">
-            <a href="#" class="logo">OnScreen Note</a>
+            <a href="#" class="logo"><span class="logo-dot"></span>OnScreen Note</a>
             <nav>
                 <ul>
                     <li><a href="#ozellikler">Özellikler</a></li>
@@ -34,23 +34,92 @@
     </header>
 
     <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Ekranınızı <br><span class="highlight">Gerçek Bir Deftere</span> Çevirin</h1>
-                <p>Sadece not almayın, yaratın. Video izlerken, makale okurken veya oyun oynarken ekranın üzerine
-                    özgürce çizin. Basınç hassasiyeti ve avuç içi reddi teknolojisiyle tanışın.</p>
+        <canvas id="ink" aria-hidden="true"></canvas>
+        <div class="float-formula" data-depth="0.5" style="top:16%; left:7%; --rot:-8deg">F = m·a</div>
+        <div class="float-formula dim" data-depth="0.3" style="top:64%; left:4%; --rot:5deg">v = λ·f</div>
+        <div class="float-formula dim" data-depth="0.7" style="top:20%; right:6%; --rot:6deg">E = ½mv²</div>
+        <div class="float-formula" data-depth="0.35" style="top:60%; right:8%; --rot:-4deg">a = Δv/Δt</div>
 
-                <!-- Mockup for Mobile ONLY (hidden on desktop via css if needed, but here acts as visual anchor) -->
+        <div class="container hero-inner">
+            <h1>Ekranını gerçek bir<br><span class="highlight">deftere</span> çevir.</h1>
+            <p class="hero-sub">Video izlerken, makale okurken, oyun oynarken — durmadan, uygulama değiştirmeden,
+                ekranın üstüne çiz.</p>
+            <div class="cta-row">
+                <a href="https://play.google.com/store/apps/details?id=com.kurapika.onscreennote" target="_blank"
+                    class="btn-primary">Google Play'den İndir</a>
+                <a href="#ozellikler" class="btn-ghost">Özelliklere göz at ↓</a>
             </div>
 
-            <div class="hero-image">
-                <!-- Ultra-Realistic CSS Mockup -->
-                <div class="phone-mockup">
-                    <div class="phone-notch"></div>
-                    <div class="screen-content">
-                        <img src="assets/img/screen_ui_design.svg" alt="OnScreen Note Arayüzü"
-                            style="width: 100%; height: 100%; object-fit: cover;"
-                            onerror="this.onerror=null; this.src='https://placehold.co/320x650/0a0a1f/FFF?text=App+UI+Design';">
+            <div class="hero-phone">
+                <span class="annotation">gerçek mürekkep hissi ↓</span>
+                <div class="phone-parallax">
+                    <div class="phone-mockup">
+                        <div class="phone-camera"></div>
+                        <div class="screen-content" role="img"
+                            aria-label="OnScreen Note arayüzü: video üzerine el yazısıyla fizik notları alınıyor">
+                            <div class="screen-ui">
+                                <div class="s-status">
+                                    <span>13:44</span>
+                                    <span class="s-status-icons"><i></i><i></i><b>63</b></span>
+                                </div>
+                                <div class="s-video">
+                                    <svg class="s-diagram" viewBox="0 0 260 132" aria-hidden="true">
+                                        <path d="M28 112 L232 112 L232 34 Z" fill="none" stroke="rgba(255,255,255,0.7)"
+                                            stroke-width="2" stroke-linejoin="round" />
+                                        <rect x="150" y="52" width="34" height="24" rx="3" fill="none"
+                                            stroke="rgba(255,255,255,0.7)" stroke-width="2"
+                                            transform="rotate(21 167 64)" />
+                                        <path d="M167 80 L167 108" stroke="rgba(255,255,255,0.55)" stroke-width="2" />
+                                        <path d="M163 102 L167 110 L171 102" fill="none"
+                                            stroke="rgba(255,255,255,0.55)" stroke-width="2" />
+                                        <path d="M60 112 A 22 22 0 0 0 55 98" fill="none"
+                                            stroke="rgba(255,255,255,0.45)" stroke-width="2" />
+                                        <text x="66" y="106" fill="rgba(255,255,255,0.55)" font-size="11">θ</text>
+                                    </svg>
+                                    <div class="s-controls">
+                                        <span class="s-play" aria-hidden="true"></span>
+                                        <div class="s-progress"><i></i></div>
+                                        <span class="s-time">12:07</span>
+                                    </div>
+                                </div>
+                                <div class="s-ink" aria-hidden="true">
+                                    <span class="s-note n1">mg·sinθ</span>
+                                    <svg class="s-arrow" viewBox="0 0 90 46">
+                                        <path d="M6 8 C 30 2, 58 10, 76 30" fill="none" stroke="#ffc107"
+                                            stroke-width="2.5" stroke-linecap="round" />
+                                        <path d="M64 28 L78 32 L70 18" fill="none" stroke="#ffc107" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <span class="s-note n2">eğik düzlemde<br>sürtünme yok!</span>
+                                    <span class="s-note n3">F = m·a</span>
+                                    <svg class="s-circle" viewBox="0 0 150 60">
+                                        <path
+                                            d="M18 30 C 14 10, 60 4, 96 8 C 138 13, 142 38, 112 48 C 78 58, 20 54, 18 34"
+                                            fill="none" stroke="#ffc107" stroke-width="2.5" stroke-linecap="round" />
+                                    </svg>
+                                </div>
+                                <div class="s-toolbar" aria-hidden="true">
+                                    <span class="s-tool active"><svg viewBox="0 0 16 16">
+                                            <path d="M11 2l3 3-8.5 8.5L2 15l1.5-3.5L11 2z" fill="currentColor" />
+                                        </svg></span>
+                                    <span class="s-tool"><svg viewBox="0 0 16 16">
+                                            <rect x="2" y="9" width="8" height="5" rx="1" fill="currentColor"
+                                                transform="rotate(-35 6 11)" />
+                                        </svg></span>
+                                    <span class="s-tool s-color"></span>
+                                    <span class="s-tool"><svg viewBox="0 0 16 16">
+                                            <path d="M1 8s2.5-4.5 7-4.5S15 8 15 8s-2.5 4.5-7 4.5S1 8 1 8z" fill="none"
+                                                stroke="currentColor" stroke-width="1.6" />
+                                            <circle cx="8" cy="8" r="2" fill="currentColor" />
+                                        </svg></span>
+                                    <span class="s-tool"><svg viewBox="0 0 16 16">
+                                            <path d="M3 8a5 5 0 1 1 1.5 3.5M3 8V4.5M3 8h3.5" fill="none"
+                                                stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                                        </svg></span>
+                                </div>
+                                <div class="s-navbar"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -59,34 +128,160 @@
 
     <section id="ozellikler" class="features">
         <div class="container">
-            <h2>Profesyonel Çizim Deneyimi</h2>
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <div class="icon">✍️</div>
-                    <h3>Basınç Hassasiyeti</h3>
-                    <p>Tıpkı gerçek kalem gibi. Bastırdıkça kalınlaşan, hafiflettikçe incelen çizgilerle doğal yazı
-                        deneyimi.</p>
+
+            <div class="feat">
+                <div class="feat-text">
+                    <h2>Bastır, kalınlaşsın.</h2>
+                    <p>Gerçek kalem nasıl davranıyorsa öyle. Bastırdıkça çizgi kalınlaşır, hafifledikçe incelir.
+                        Stylus'unla da parmağınla da çalışır.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="icon">✋</div>
-                    <h3>Avuç İçi Reddi</h3>
-                    <p>Elinizi ekrana yaslamaktan korkmayın. Akıllı algoritmamız sadece kaleminizi takip eder.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="icon">👻</div>
-                    <h3>Hayalet Modu</h3>
-                    <p>Çizimlerinizi anında görünmez yapın ve arkadaki uygulamayı kullanmaya devam edin.</p>
+                <div class="feat-visual reveal">
+                    <div class="visual-card" aria-hidden="true">
+                        <svg viewBox="0 0 340 200">
+                            <text x="24" y="52" class="v-label">hafif</text>
+                            <path d="M84 46 C 150 30, 220 60, 316 40" fill="none" stroke="#ffc107" stroke-width="2.5"
+                                stroke-linecap="round" />
+                            <text x="24" y="112" class="v-label">orta</text>
+                            <path d="M84 106 C 150 90, 220 120, 316 100" fill="none" stroke="#ffc107" stroke-width="7"
+                                stroke-linecap="round" />
+                            <text x="24" y="172" class="v-label">bastır</text>
+                            <path d="M84 166 C 150 150, 220 180, 316 160" fill="none" stroke="#ffc107"
+                                stroke-width="14" stroke-linecap="round" />
+                        </svg>
+                    </div>
                 </div>
             </div>
+
+            <div class="feat rev">
+                <div class="feat-text">
+                    <h2>Elini ekrana yasla.</h2>
+                    <p>Avuç içi reddi, kalemle avucunu ayırt eder. Elini çekinmeden ekrana koy; yalnızca kalemin iz
+                        bırakır.</p>
+                </div>
+                <div class="feat-visual reveal">
+                    <div class="visual-card" aria-hidden="true">
+                        <svg viewBox="0 0 340 200">
+                            <ellipse cx="245" cy="150" rx="62" ry="40" fill="rgba(27,27,26,0.06)"
+                                stroke="rgba(27,27,26,0.18)" stroke-width="2" stroke-dasharray="6 6" />
+                            <text x="245" y="155" class="v-label" text-anchor="middle">avuç · yok sayıldı</text>
+                            <path d="M30 130 C 90 40, 170 100, 250 46" fill="none" stroke="#ffc107" stroke-width="6"
+                                stroke-linecap="round" />
+                            <circle cx="250" cy="46" r="5" fill="#1b1b1a" />
+                            <text x="262" y="40" class="v-label">sadece kalem</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feat">
+                <div class="feat-text">
+                    <h2>Çiz, gizle, devam et.</h2>
+                    <p>Hayalet modu notlarını tek dokunuşla görünmez yapar. Arkadaki uygulamayı kullanmaya devam et;
+                        notların istediğinde geri gelsin.</p>
+                </div>
+                <div class="feat-visual reveal">
+                    <div class="visual-card ghost-demo" aria-hidden="true">
+                        <div class="mini-screen">
+                            <svg viewBox="0 0 120 90">
+                                <path d="M18 60 C 40 24, 70 66, 104 34" fill="none" stroke="#ffc107" stroke-width="5"
+                                    stroke-linecap="round" />
+                            </svg>
+                            <span class="v-label">görünür</span>
+                        </div>
+                        <span class="ghost-arrow">→</span>
+                        <div class="mini-screen">
+                            <svg viewBox="0 0 120 90">
+                                <path d="M18 60 C 40 24, 70 66, 104 34" fill="none" stroke="#ffc107" stroke-width="5"
+                                    stroke-linecap="round" opacity="0.12" />
+                            </svg>
+                            <span class="v-label">gizli</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="more">
+        <div class="container">
+            <h2>Küçük ama vazgeçilmez</h2>
+            <div class="more-grid">
+                <div class="more-item">
+                    <svg viewBox="0 0 20 20">
+                        <rect x="3" y="11" width="10" height="6" rx="1.5" fill="none" stroke="currentColor"
+                            stroke-width="1.7" transform="rotate(-35 8 14)" />
+                        <path d="M12 16h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+                    </svg>
+                    <h3>Silgi</h3>
+                    <p>Yanlış çizgiyi sil, gerisi yerinde kalsın.</p>
+                </div>
+                <div class="more-item">
+                    <svg viewBox="0 0 20 20">
+                        <circle cx="7" cy="7" r="2.4" fill="currentColor" />
+                        <circle cx="14" cy="9" r="2.4" fill="none" stroke="currentColor" stroke-width="1.5" />
+                        <circle cx="9" cy="14" r="2.4" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    </svg>
+                    <h3>Renkler</h3>
+                    <p>Farklı renklerle işaretle, ayır, vurgula.</p>
+                </div>
+                <div class="more-item">
+                    <svg viewBox="0 0 20 20">
+                        <rect x="2.5" y="5" width="15" height="11" rx="2" fill="none" stroke="currentColor"
+                            stroke-width="1.7" />
+                        <circle cx="10" cy="10.5" r="3" fill="none" stroke="currentColor" stroke-width="1.7" />
+                    </svg>
+                    <h3>Ekran görüntüsü</h3>
+                    <p>Notunla birlikte ekranı tek dokunuşla kaydet.</p>
+                </div>
+                <div class="more-item">
+                    <svg viewBox="0 0 20 20">
+                        <path d="M5 10a5.5 5.5 0 1 1 1.5 4M5 10V6.5M5 10h3.5" fill="none" stroke="currentColor"
+                            stroke-width="1.7" stroke-linecap="round" />
+                    </svg>
+                    <h3>Geri al</h3>
+                    <p>Her hamle geri alınabilir. Deneme özgürlüğü.</p>
+                </div>
+                <div class="more-item">
+                    <svg viewBox="0 0 20 20">
+                        <path d="M4 16c2-6 4-9 6-9s4 3 6 9" fill="none" stroke="currentColor" stroke-width="1.7"
+                            stroke-linecap="round" />
+                        <circle cx="10" cy="4.5" r="1.6" fill="currentColor" />
+                    </svg>
+                    <h3>Kalem kalınlığı</h3>
+                    <p>İnce nottan kalın vurguya, kalınlık senin elinde.</p>
+                </div>
+                <div class="more-item">
+                    <svg viewBox="0 0 20 20">
+                        <rect x="3" y="3" width="11" height="11" rx="2" fill="none" stroke="currentColor"
+                            stroke-width="1.7" />
+                        <rect x="7" y="7" width="10" height="10" rx="2" fill="none" stroke="currentColor"
+                            stroke-width="1.7" />
+                    </svg>
+                    <h3>Her şeyin üstünde</h3>
+                    <p>Video, PDF, oyun, ders kaydı — fark etmez.</p>
+                </div>
+            </div>
+            <p class="honest-note">Notların cihazında kalır, sunucuya gitmez.<br>Ücretsiz ve reklam destekli — dilersen
+                Pro'ya geçer, reklamsız kullanırsın. Bu kadar.</p>
+        </div>
+    </section>
+
+    <section class="cta-band">
+        <div class="container">
+            <h2>Ekranın, defterin olsun.</h2>
+            <p>Ücretsiz indir, kalemini ekrana koy.</p>
+            <a href="https://play.google.com/store/apps/details?id=com.kurapika.onscreennote" target="_blank"
+                class="btn-dark">Google Play'den İndir</a>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 OnScreen Note. Tüm hakları saklıdır.</p>
+            <p>&copy; 2026 OnScreen Note. Tüm hakları saklıdır.</p>
             <div class="footer-links">
                 <a href="privacy.html">Gizlilik Politikası</a>
-                <a href="#mailto:contact@kurapika.com">İletişim</a>
+                <a href="mailto:contact@kurapika.com">İletişim</a>
             </div>
         </div>
     </footer>
@@ -100,6 +295,136 @@
                 header.classList.remove('scrolled');
             }
         });
+
+        // Hero mürekkep: imleç gezdikçe amber çizgi, ürünün yaptığı şey
+        (() => {
+            const canvas = document.getElementById('ink');
+            if (!canvas || !matchMedia('(prefers-reduced-motion: no-preference)').matches) return;
+            const ctx = canvas.getContext('2d');
+            const dpr = Math.min(window.devicePixelRatio || 1, 2);
+            let pts = [];
+
+            const resize = () => {
+                canvas.width = canvas.offsetWidth * dpr;
+                canvas.height = canvas.offsetHeight * dpr;
+            };
+            resize();
+            window.addEventListener('resize', resize);
+
+            let running = false;
+            let drawnUpTo = 0;
+            let lastPointAt = 0;
+
+            canvas.parentElement.addEventListener('pointermove', (e) => {
+                const r = canvas.getBoundingClientRect();
+                pts.push({ x: (e.clientX - r.left) * dpr, y: (e.clientY - r.top) * dpr, t: performance.now() });
+                lastPointAt = performance.now();
+                if (pts.length > 500) { const drop = pts.length - 500; pts.splice(0, drop); drawnUpTo = Math.max(0, drawnUpTo - drop); }
+                if (!running) { running = true; requestAnimationFrame(draw); }
+            });
+
+            const FADE_AFTER = 2600; // son çizgiden bu kadar sonra tuval tamamen temiz
+            const draw = () => {
+                const now = performance.now();
+
+                // Eski mürekkebi her karede biraz sil (hayalet modu):
+                // opak çizgi + katmanlı soldurma = eklem noktasız, pürüzsüz iz
+                ctx.globalCompositeOperation = 'destination-out';
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.045)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.globalCompositeOperation = 'source-over';
+
+                // Sadece yeni gelen parçaları çiz, tam opağa yakın
+                ctx.lineCap = 'round';
+                ctx.lineJoin = 'round';
+                ctx.strokeStyle = 'rgba(230, 168, 0, 0.9)';
+                for (let i = Math.max(drawnUpTo, 1); i < pts.length; i++) {
+                    const a = pts[i - 1], b = pts[i];
+                    if (b.t - a.t > 90) continue; // kalem kalktı
+                    const dist = Math.hypot(b.x - a.x, b.y - a.y);
+                    // yavaş hareket = bastırılmış kalem = kalın çizgi
+                    ctx.lineWidth = Math.max(2.5, 13 - dist * 0.12) * dpr;
+                    const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2;
+                    ctx.beginPath();
+                    ctx.moveTo(a.x, a.y);
+                    ctx.quadraticCurveTo(a.x, a.y, mx, my);
+                    ctx.lineTo(b.x, b.y);
+                    ctx.stroke();
+                }
+                drawnUpTo = Math.max(pts.length - 1, 0);
+
+                if (now - lastPointAt > FADE_AFTER) {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    pts = [];
+                    drawnUpTo = 0;
+                    running = false;
+                    return;
+                }
+                requestAnimationFrame(draw);
+            };
+        })();
+
+        // 3D parallax: fare eğimi + scroll derinlik katmanları
+        (() => {
+            if (!matchMedia('(prefers-reduced-motion: no-preference)').matches) return;
+            const hero = document.querySelector('.hero');
+            const wrap = document.querySelector('.phone-parallax');
+            const formulas = [...document.querySelectorAll('.float-formula')];
+            const fine = matchMedia('(pointer: fine)').matches;
+            let tx = 0, ty = 0, mx = 0, my = 0, ticking = false;
+
+            const kick = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
+
+            if (fine) {
+                hero.addEventListener('pointermove', (e) => {
+                    const r = hero.getBoundingClientRect();
+                    tx = (e.clientX - r.left) / r.width - 0.5;
+                    ty = (e.clientY - r.top) / r.height - 0.5;
+                    kick();
+                }, { passive: true });
+                hero.addEventListener('pointerleave', () => { tx = 0; ty = 0; kick(); });
+            }
+            window.addEventListener('scroll', kick, { passive: true });
+
+            const update = () => {
+                ticking = false;
+                mx += (tx - mx) * 0.07;
+                my += (ty - my) * 0.07;
+                const sy = window.scrollY;
+
+                // Telefon: imleci takip eden eğim + scroll'da geriye yatış
+                wrap.style.transform =
+                    'translateY(' + (sy * 0.08).toFixed(1) + 'px)' +
+                    ' rotateY(' + (mx * 12 + sy * 0.012).toFixed(2) + 'deg)' +
+                    ' rotateX(' + (-my * 9 - sy * 0.008).toFixed(2) + 'deg)';
+
+                // Formüller: her biri kendi derinliğinde
+                for (const f of formulas) {
+                    const d = parseFloat(f.dataset.depth);
+                    f.style.transform =
+                        'translate(' + (-mx * 70 * d).toFixed(1) + 'px, ' +
+                        (-sy * 0.3 * d - my * 50 * d).toFixed(1) + 'px)';
+                }
+
+                if (Math.abs(tx - mx) > 0.002 || Math.abs(ty - my) > 0.002) kick();
+            };
+        })();
+
+        // Özellik görselleri: görünür olunca tek seferlik yumuşak giriş
+        (() => {
+            const els = document.querySelectorAll('.reveal');
+            if (!('IntersectionObserver' in window) ||
+                !matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+                els.forEach(el => el.classList.add('in'));
+                return;
+            }
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(en => {
+                    if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+                });
+            }, { threshold: 0.25 });
+            els.forEach(el => io.observe(el));
+        })();
     </script>
 </body>
 
