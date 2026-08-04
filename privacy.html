@@ -33,7 +33,7 @@
     <div class="container" style="padding-top: 120px; padding-bottom: 60px; min-height: 80vh;">
         <div class="glass" style="padding: 40px; border-radius: 20px;">
             <h1 style="font-family: var(--font-heading); margin-bottom: 20px;">Gizlilik Politikası</h1>
-            <p style="color: var(--text-muted); margin-bottom: 30px;">Son güncellenme: 10.07.2026 · Uygulama: OSNote: Draw on Screen (eski adıyla OnScreen Note)</p>
+            <p style="color: var(--text-muted); margin-bottom: 30px;">Son güncellenme: 04.08.2026 · Uygulama: OSNote: Draw on Screen (eski adıyla OnScreen Note)</p>
 
             <h3 style="color: var(--color-secondary); margin-bottom: 10px;">Giriş</h3>
             <p style="margin-bottom: 20px;">OSNote ("biz") gizliliğinize saygı duyar. Bu politika, uygulamayı
@@ -51,15 +51,23 @@
             <p style="margin-bottom: 20px;"><strong>Reklam verileri:</strong> Ücretsiz sürümde Google AdMob, reklam
                 gösterimi için cihazınızın reklam kimliği gibi verileri kullanabilir. Avrupa'daki kullanıcılara onay
                 formu gösterilir; tercihlerinizi uygulama içinden Ayarlar → Reklam Tercihleri ile değiştirebilirsiniz.</p>
+            <p style="margin-bottom: 20px;"><strong>Çökme ve tanılama verileri:</strong> Uygulama beklenmedik şekilde
+                kapandığında ya da bir hata oluştuğunda, sorunu bulup düzeltebilmemiz için teknik bir rapor
+                Google Firebase Crashlytics aracılığıyla bize iletilir. Bu rapor hatanın oluştuğu kod satırını,
+                cihaz modelini, Android sürümünü, bellek durumunu ve uygulamanın o andaki teknik durumunu içerir.
+                <strong>Notlarınızın içeriği, defter adlarınız, e-posta adresiniz veya kullanıcı kimliğiniz bu
+                raporlara asla eklenmez.</strong> Raporlar yalnızca Play Store'dan indirdiğiniz yayın sürümünde
+                toplanır ve Firebase tarafında 90 gün saklandıktan sonra silinir.</p>
 
             <h3 style="color: var(--color-secondary); margin-bottom: 10px;">Kullanım Amaçları</h3>
             <p style="margin-bottom: 20px;">Bu bilgileri yalnızca şunlar için kullanırız: hesabınızı yönetmek,
-                satın alımlarınızı doğrulamak ve cihazlar arasında taşımak, reklam göstermek ve destek taleplerinize
-                yanıt vermek. Verileriniz üçüncü taraflara satılmaz.</p>
+                satın alımlarınızı doğrulamak ve cihazlar arasında taşımak, reklam göstermek, çökme ve hataları
+                teşhis edip düzeltmek ve destek taleplerinize yanıt vermek. Verileriniz üçüncü taraflara satılmaz.</p>
 
             <h3 style="color: var(--color-secondary); margin-bottom: 10px;">Paylaşım</h3>
             <p style="margin-bottom: 20px;">Veriler yalnızca, bizim adımıza hizmet veren sağlayıcılarla paylaşılır:
-                Google Firebase (kimlik doğrulama), RevenueCat (satın alma yönetimi) ve Google AdMob (reklam).
+                Google Firebase (kimlik doğrulama), Google Firebase Crashlytics (çökme ve tanılama raporları),
+                RevenueCat (satın alma yönetimi) ve Google AdMob (reklam).
                 Tüm aktarımlar şifrelenir (TLS).</p>
 
             <h3 style="color: var(--color-secondary); margin-bottom: 10px;">Saklama ve Silme</h3>
@@ -88,9 +96,15 @@
                 authentication. If you purchase Pro, your purchase status and transaction history are linked to your
                 account via our service provider RevenueCat so Pro works on all your devices. The free version shows
                 ads via Google AdMob, which may use your device's advertising ID (consent is collected where required).</p>
-            <p style="margin-bottom: 12px;">We use this data only for account management, purchase verification, ads
-                and support. Data is never sold. It is shared only with service providers acting on our behalf
-                (Google Firebase, RevenueCat, Google AdMob) and is encrypted in transit.</p>
+            <p style="margin-bottom: 12px;">When the app crashes or hits an error, a technical report is sent to us via
+                Google Firebase Crashlytics so we can find and fix the problem. It contains the failing code location,
+                device model, Android version, memory state and the app's technical state at that moment.
+                <strong>Your note content, notebook names, email address and user ID are never included.</strong>
+                Reports are collected only in the release build from the Play Store and are deleted after 90 days.</p>
+            <p style="margin-bottom: 12px;">We use this data only for account management, purchase verification, ads,
+                diagnosing and fixing crashes, and support. Data is never sold. It is shared only with service providers
+                acting on our behalf (Google Firebase, Firebase Crashlytics, RevenueCat, Google AdMob) and is encrypted
+                in transit.</p>
             <p>You can request deletion of your account and associated data at any time — see the
                 <a href="hesap-silme.html" style="color: var(--color-secondary);">account deletion page</a>.
                 Contact: <a href="mailto:destek217product@gmail.com"
