@@ -33,7 +33,7 @@
     <div class="container" style="padding-top: 120px; padding-bottom: 60px; min-height: 80vh;">
         <div class="glass" style="padding: 40px; border-radius: 20px;">
             <h1 style="font-family: var(--font-heading); margin-bottom: 20px;">Gizlilik Politikası</h1>
-            <p style="color: var(--text-muted); margin-bottom: 30px;">Son güncellenme: 04.08.2026 · Uygulama: OSNote: Draw on Screen (eski adıyla OnScreen Note)</p>
+            <p style="color: var(--text-muted); margin-bottom: 30px;">Son güncellenme: 15.08.2026 · Uygulama: OSNote: Draw on Screen (eski adıyla OnScreen Note)</p>
 
             <h3 style="color: var(--color-secondary); margin-bottom: 10px;">Giriş</h3>
             <p style="margin-bottom: 20px;">OSNote ("biz") gizliliğinize saygı duyar. Bu politika, uygulamayı
@@ -58,16 +58,35 @@
                 <strong>Notlarınızın içeriği, defter adlarınız, e-posta adresiniz veya kullanıcı kimliğiniz bu
                 raporlara asla eklenmez.</strong> Raporlar yalnızca Play Store'dan indirdiğiniz yayın sürümünde
                 toplanır ve Firebase tarafında 90 gün saklandıktan sonra silinir.</p>
+            <p style="margin-bottom: 20px;"><strong>Kullanım ve analitik verileri:</strong> Uygulamayı
+                geliştirebilmek için, kullanıcıların hangi adımlarda zorlandığını gösteren teknik olaylar
+                Google Firebase Analytics aracılığıyla toplanır: tanıtım ekranlarında hangi adımda devam
+                edildiği veya atlandığı, "diğer uygulamaların üzerinde göster" izninin verilip verilmediği,
+                ekran kaleminin hangi modda başlatıldığı, ilk çizimin yapılması, defter ve ekran görüntüsü
+                notu oluşturulması, Pro ekranının görüntülenmesi ve satın alma akışının başlatılması, ödüllü
+                reklamın tamamlanması. Bunlarla birlikte cihaz modeli, Android sürümü, uygulama sürümü, dil
+                ve ülke bilgisi ile uygulamaya özel rastgele bir kurulum kimliği işlenir.
+                <strong>Notlarınızın içeriği, çizimleriniz, defter adlarınız, e-posta adresiniz veya
+                kullanıcı kimliğiniz bu verilere asla eklenmez.</strong> Olayların taşıyabileceği bilgiler
+                yazılımda önceden belirlenmiş sabit seçeneklerle sınırlıdır; serbest metin gönderilmez.
+                Reklam kimliğinizin analitik tarafından kullanılması <strong>kapatılmıştır</strong>.
+                Bu veriler <strong>yalnızca izin verdiyseniz</strong> toplanır; izninizi Ayarlar → Reklam
+                Tercihleri'nden istediğiniz zaman geri çekebilirsiniz. Geri çektiğinizde toplama durur ve
+                cihazınızdaki ölçüm kimliği silinir. Veriler yalnızca Play Store'dan indirdiğiniz yayın
+                sürümünde toplanır ve Firebase tarafında en fazla 14 ay saklanır.</p>
 
             <h3 style="color: var(--color-secondary); margin-bottom: 10px;">Kullanım Amaçları</h3>
             <p style="margin-bottom: 20px;">Bu bilgileri yalnızca şunlar için kullanırız: hesabınızı yönetmek,
                 satın alımlarınızı doğrulamak ve cihazlar arasında taşımak, reklam göstermek, çökme ve hataları
-                teşhis edip düzeltmek ve destek taleplerinize yanıt vermek. Verileriniz üçüncü taraflara satılmaz.</p>
+                teşhis edip düzeltmek, uygulamanın hangi adımlarının zorlayıcı olduğunu anlayıp ürünü
+                geliştirmek ve destek taleplerinize yanıt vermek. Verileriniz üçüncü taraflara satılmaz ve
+                reklam hedefleme amacıyla profilleme yapılmaz.</p>
 
             <h3 style="color: var(--color-secondary); margin-bottom: 10px;">Paylaşım</h3>
             <p style="margin-bottom: 20px;">Veriler yalnızca, bizim adımıza hizmet veren sağlayıcılarla paylaşılır:
                 Google Firebase (kimlik doğrulama), Google Firebase Crashlytics (çökme ve tanılama raporları),
-                RevenueCat (satın alma yönetimi) ve Google AdMob (reklam).
+                Google Firebase Analytics (kullanım analitiği), RevenueCat (satın alma yönetimi) ve
+                Google AdMob (reklam).
                 Tüm aktarımlar şifrelenir (TLS).</p>
 
             <h3 style="color: var(--color-secondary); margin-bottom: 10px;">Saklama ve Silme</h3>
@@ -101,10 +120,23 @@
                 device model, Android version, memory state and the app's technical state at that moment.
                 <strong>Your note content, notebook names, email address and user ID are never included.</strong>
                 Reports are collected only in the release build from the Play Store and are deleted after 90 days.</p>
+            <p style="margin-bottom: 12px;">To improve the app we also collect usage events via Google Firebase
+                Analytics: which onboarding step you continue from or skip, whether the "display over other apps"
+                permission was granted, which mode the on-screen pen was started in, your first drawing stroke,
+                creating notebooks and screenshot notes, viewing the Pro screen and starting a purchase, and
+                completing a rewarded ad — together with device model, Android version, app version, language,
+                country and a random per-installation identifier.
+                <strong>Your note content, drawings, notebook names, email address and user ID are never
+                included</strong>; event details are limited to a fixed set of options defined in the app, and no
+                free-form text is sent. Use of your advertising ID by analytics is <strong>disabled</strong>.
+                This data is collected <strong>only if you consented</strong>; you can withdraw consent at any
+                time via Settings → Ad Preferences, which stops collection and deletes the measurement identifier
+                on your device. Collected only in the release build and retained for at most 14 months.</p>
             <p style="margin-bottom: 12px;">We use this data only for account management, purchase verification, ads,
-                diagnosing and fixing crashes, and support. Data is never sold. It is shared only with service providers
-                acting on our behalf (Google Firebase, Firebase Crashlytics, RevenueCat, Google AdMob) and is encrypted
-                in transit.</p>
+                diagnosing and fixing crashes, understanding which steps of the app are difficult so we can improve it,
+                and support. Data is never sold and we do not profile you for ad targeting. It is shared only with
+                service providers acting on our behalf (Google Firebase, Firebase Crashlytics, Firebase Analytics,
+                RevenueCat, Google AdMob) and is encrypted in transit.</p>
             <p>You can request deletion of your account and associated data at any time — see the
                 <a href="hesap-silme.html" style="color: var(--color-secondary);">account deletion page</a>.
                 Contact: <a href="mailto:destek217product@gmail.com"
